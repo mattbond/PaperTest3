@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="pageService" targetNamespace="http://paper.bitapp.de/page" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://paper.bitapp.de/page" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://paper.bitapp.de/page" xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="FileType">
+				<xsd:sequence>
+					<xsd:element name="FileName" type="normalizedString"/>
+					<xsd:element name="BinaryData" type="xsd:base64Binary"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CodeType">
+				<xsd:sequence>
+					<xsd:element name="Code" type="int"/>
+					<xsd:element name="Message" type="normalizedString"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PingRequest">
+    <wsdl:part name="Status" type="tns:FileType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PingResponse">
+    <wsdl:part name="Status" type="tns:CodeType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="pageServicePortType">
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:PingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="pageServiceBinding" type="tns:pageServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="Ping" style="rpc"/>
+      <wsdl:input>
+        <soap:body namespace="http://paper.bitapp.de/page"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body namespace="http://paper.bitapp.de/page"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="pageService">
+    <wsdl:port name="pageServicePort" binding="tns:pageServiceBinding">
+      <soap:address location="http://localhost:8080/PaperTest3/services/pageServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

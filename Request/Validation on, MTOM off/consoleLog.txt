@@ -1,0 +1,34 @@
+Jun 12, 2014 5:17:40 PM org.apache.cxf.services.pageService.pageServicePort.pageServicePortType
+INFO: Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/PaperTest3/services/pageServicePort
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml;charset=UTF-8
+Headers: {accept-encoding=[gzip,deflate], connection=[Keep-Alive], Content-Length=[381], content-type=[text/xml;charset=UTF-8], host=[localhost:8080], SOAPAction=["Ping"], user-agent=[Apache-HttpClient/4.1.1 (java 1.5)]}
+Payload: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:page="http://paper.bitapp.de/page">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <page:Ping>
+         <Status>
+            <FileName>Cool</FileName>
+            <BinaryData>VGhpcyBpcyB0aGUgdGVzdCBkYXRhIGZpbGU=</BinaryData>
+         </Status>
+      </page:Ping>
+   </soapenv:Body>
+</soapenv:Envelope>
+--------------------------------------
+Jun 12, 2014 5:17:40 PM de.bitapp.paper.page.PageServicePortTypeImpl ping
+INFO: Executing operation ping
+de.bitapp.paper.page.FileType@388ed5df
+Jun 12, 2014 5:17:40 PM org.apache.cxf.services.pageService.pageServicePort.pageServicePortType
+INFO: Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns1:PingResponse xmlns:ns1="http://paper.bitapp.de/page"><Status xmlns:ns3="http://paper.bitapp.de/page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns3:CodeType"><Code>1048498287</Code><Message>Message-2025488042</Message></Status></ns1:PingResponse></soap:Body></soap:Envelope>
+--------------------------------------

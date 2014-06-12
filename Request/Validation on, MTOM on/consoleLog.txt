@@ -1,0 +1,104 @@
+Jun 12, 2014 5:18:54 PM org.apache.cxf.services.pageService.pageServicePort.pageServicePortType
+INFO: Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/PaperTest3/services/pageServicePort
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: multipart/related; type="application/xop+xml"; start="<rootpart@soapui.org>"; start-info="text/xml"; boundary="----=_Part_8_29386087.1402561134652"
+Headers: {accept-encoding=[gzip,deflate], connection=[Keep-Alive], Content-Length=[926], content-type=[multipart/related; type="application/xop+xml"; start="<rootpart@soapui.org>"; start-info="text/xml"; boundary="----=_Part_8_29386087.1402561134652"], host=[localhost:8080], mime-version=[1.0], SOAPAction=["Ping"], user-agent=[Apache-HttpClient/4.1.1 (java 1.5)]}
+Payload: 
+------=_Part_8_29386087.1402561134652
+Content-Type: application/xop+xml; charset=UTF-8; type="text/xml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <rootpart@soapui.org>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:page="http://paper.bitapp.de/page">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <page:Ping>
+         <Status>
+            <FileName>Cool</FileName>
+            <BinaryData><inc:Include href="cid:TestFile.txt" xmlns:inc="http://www.w3.org/2004/08/xop/include"/></BinaryData>
+         </Status>
+      </page:Ping>
+   </soapenv:Body>
+</soapenv:Envelope>
+------=_Part_8_29386087.1402561134652
+Content-Type: text/plain; charset=us-ascii; name=TestFile.txt
+Content-Transfer-Encoding: 7bit
+Content-ID: <TestFile.txt>
+Content-Disposition: attachment; name="TestFile.txt"; filename="TestFile.txt"
+
+This is the test data file
+------=_Part_8_29386087.1402561134652--
+
+--------------------------------------
+Jun 12, 2014 5:18:54 PM org.apache.cxf.phase.PhaseInterceptorChain doDefaultLogging
+WARNING: Interceptor for {http://paper.bitapp.de/page}pageService#{http://paper.bitapp.de/page}Ping has thrown exception, unwinding now
+java.lang.IllegalArgumentException: Invalid index -1; current element has only 1 attributes
+	at com.ctc.wstx.sr.AttributeCollector.throwIndex(AttributeCollector.java:1037)
+	at com.ctc.wstx.sr.AttributeCollector.getPrefix(AttributeCollector.java:323)
+	at com.ctc.wstx.sr.BasicStreamReader.getAttributePrefix(BasicStreamReader.java:607)
+	at org.apache.cxf.staxutils.DepthXMLStreamReader.getAttributePrefix(DepthXMLStreamReader.java:67)
+	at javax.xml.stream.util.StreamReaderDelegate.getAttributePrefix(StreamReaderDelegate.java:161)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder$AddXSITypeStreamReader.getAttributePrefix(JAXBEncoderDecoder.java:141)
+	at org.apache.cxf.staxutils.DepthXMLStreamReader.getAttributePrefix(DepthXMLStreamReader.java:67)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.StAXStreamConnector$1.getQName(StAXStreamConnector.java:268)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.StAXStreamConnector$1.getIndex(StAXStreamConnector.java:294)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.StAXStreamConnector$1.getValue(StAXStreamConnector.java:319)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.MTOMDecorator.startElement(MTOMDecorator.java:99)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.StAXStreamConnector.handleStartElement(StAXStreamConnector.java:246)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.StAXStreamConnector.bridge(StAXStreamConnector.java:180)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(UnmarshallerImpl.java:415)
+	at com.sun.xml.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:394)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.doUnmarshal(JAXBEncoderDecoder.java:851)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.access$100(JAXBEncoderDecoder.java:102)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder$2.run(JAXBEncoderDecoder.java:871)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.unmarshall(JAXBEncoderDecoder.java:869)
+	at org.apache.cxf.jaxb.JAXBEncoderDecoder.unmarshall(JAXBEncoderDecoder.java:703)
+	at org.apache.cxf.jaxb.io.DataReaderImpl.read(DataReaderImpl.java:160)
+	at org.apache.cxf.binding.soap.interceptor.RPCInInterceptor.handleMessage(RPCInInterceptor.java:176)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:243)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:223)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:197)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:149)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:171)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:286)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doPost(AbstractHTTPServlet.java:206)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jun 12, 2014 5:18:54 PM org.apache.cxf.services.pageService.pageServicePort.pageServicePortType
+INFO: Outbound Message
+---------------------------
+ID: 2
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring>Invalid index -1; current element has only 1 attributes</faultstring></soap:Fault></soap:Body></soap:Envelope>
+--------------------------------------

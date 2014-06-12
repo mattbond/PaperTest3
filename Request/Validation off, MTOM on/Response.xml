@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns1:PingResponse xmlns:ns1="http://paper.bitapp.de/page">
+         <Status>
+            <Code>1048498287</Code>
+            <Message>Message-2025488042</Message>
+         </Status>
+      </ns1:PingResponse>
+   </soap:Body>
+</soap:Envelope>
