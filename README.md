@@ -17,4 +17,4 @@ Results: (Complete console logs and Responses are in the project in subfolders o
 
 
 Project also includes:
- SoapUI 5.0.0 Project. Currently set to MTOM on (enabled)
+* SoapUI 5.0.0 Project. Currently set to MTOM on (enabled)
