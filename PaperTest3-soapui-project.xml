@@ -51,8 +51,8 @@
       <page:Ping>
          <Status>
             <FileName>Cool</FileName>
-            <BinaryData>cid:TestFilePart</BinaryData>
+            <BinaryData>cid:TestFile.txt</BinaryData>
          </Status>
       </page:Ping>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>README.md</con:name><con:contentType>application/octet-stream</con:contentType><con:contentId>TestFilePart</con:contentId><con:part>TestFilePart</con:part><con:url>${projectDir}/TestFile.txt</con:url><con:id>2807e471-444b-4285-a528-9b7ea45c7411</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Ping"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>TestFile.txt</con:name><con:contentType>text/plain</con:contentType><con:contentId>TestFile.txt</con:contentId><con:part>TestFile.txt</con:part><con:url>${projectDir}/TestFile.txt</con:url><con:id>4ec0e244-fda6-46d2-8c45-36ade9ef6d3a</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="Ping"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
