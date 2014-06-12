@@ -7,7 +7,7 @@ Abbreviations:
 * SSV = server side validation i.e. in cxf-beans.xml `<jaxws:properties><entry key="schema-validation-enabled" value="true" /></jaxws:properties>`
 * CSM = client side MTOM (Enable MTOM enabled in SoapUI 5.0.0)
 
-All 4 combinations of SSV : ON / OFF and CSM : ON / OFF wer tried
+All 4 combinations of SSV : ON / OFF and CSM : ON / OFF were tested
 
 Results:
 * SSV OFF : CSM OFF -> Works
